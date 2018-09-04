@@ -3,7 +3,7 @@
 
 ##Overview
 
-This is the code for the "Data Visualization with d3 and dimple .The code uses the [d3.js](https://d3js.org/) library as well as the [Dimple](http://dimplejs.org/) wrapper around it to visualize the Titanic Survivor Dataset using both a bar chart and a pie chart. This runs as a [node](https://nodejs.org/en/) web app. 
+This is the code for the "Data Visualization with d3 and dimple .The code uses the [d3.js](https://d3js.org/) library as well as the [Dimple](http://dimplejs.org/) wrapper around it. This runs as a [node](https://nodejs.org/en/) web app. 
 
 ##Dependencies
 
