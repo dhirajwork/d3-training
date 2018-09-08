@@ -45,6 +45,9 @@
 		<select id = "choicex">
 			
 			<option value="srcip" >srcip</option>
+				<option value="Smonth">month</option>
+				<option value="Shour">hour</option>
+				<option value="Sday">day</option>
 				<option value="sport">sport</option>
 				<option value="dstip">dstip</option>
 				<option value="dsport">dsport</option>
@@ -107,7 +110,9 @@
 				<option value="sport">sport</option>
 				<option value="dstip">dstip</option>
 				<option value="dsport">dsport</option>
-				
+					<option value="Smonth">month</option>
+				<option value="Shour">hour</option>
+				<option value="Sday">day</option>
 						   <option value="sttl" selected="selected">sttl</option>
 						   <option value="dttl">dttl</option>
 						   <option value="proto">proto</option>
@@ -164,6 +169,9 @@
 				<option value="sport">sport</option>
 				<option value="dstip">dstip</option>
 				<option value="dsport">dsport</option>
+							   	<option value="Smonth">month</option>
+				<option value="Shour">hour</option>
+				<option value="Sday">day</option>
 				
 								   <option value="sttl">sttl</option>
 								   <option value="dttl">dttl</option>
@@ -225,7 +233,21 @@
 	<div id='chartContainer1'>
 		<h2>Lets Visualise Data :)</h2>
 
-		<script type="text/javascript">
+					<script type="text/javascript">
+						var month = new Array();
+			month[0] = "January";
+			month[1] = "February";
+			month[2] = "March";
+			month[3] = "April";
+			month[4] = "May";
+			month[5] = "June";
+			month[6] = "July";
+			month[7] = "August";
+			month[8] = "September";
+			month[9] = "October";
+			month[10] = "November";
+			month[11] = "December";
+			
 var reload=function(){
 		
 			var svg1 = dimple.newSvg('#chartContainer1', 1500,400);
@@ -233,6 +255,13 @@ var reload=function(){
 			var choicey =document.getElementById("choicey").value;
 			var choicecat =document.getElementById("choicecat").value;
 			d3.csv('/test.csv', function(data) {
+					data.forEach(function(d){
+					var date= new Date(d.Stime * 1000);
+                        d.Smonth=month[date.getUTCMonth()];
+			d.Shour= date.getHours();
+                        d.Sday=date.getDay(); 
+
+					});
 			var ChartInstance = new dimple.chart(svg1,data);
 			ChartInstance.setBounds(60,30,510,305);
 			var x = ChartInstance.addCategoryAxis('x', ""+choicex+"");
