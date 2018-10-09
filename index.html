@@ -250,11 +250,11 @@
 			
 var reload=function(){
 		
-			var svg1 = dimple.newSvg('#chartContainer1', 1500,400);
+			var svg1 = dimple.newSvg('#chartContainer1', 2000,700);
 			var choicex =document.getElementById("choicex").value;
 			var choicey =document.getElementById("choicey").value;
 			var choicecat =document.getElementById("choicecat").value;
-			d3.csv('/test.csv', function(data) {
+			d3.csv('/newdata.csv', function(data) {
 					data.forEach(function(d){
 					var date= new Date(d.Stime * 1000);
                         d.Smonth=month[date.getUTCMonth()];
@@ -275,7 +275,7 @@ var reload=function(){
 			//var y = ChartInstance.addMeasureAxis('y', 'Count');
 			var s = ChartInstance.addSeries(""+choicecat+"", dimple.plot.bar);
 			ChartInstance.addLegend(60, 10, 510, 20, "right");
-			ChartInstance.draw(1000);	
+			ChartInstance.draw(1500);	
 			 });
 			 
 			}
