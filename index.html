@@ -254,7 +254,7 @@ var reload=function(){
 			var choicex =document.getElementById("choicex").value;
 			var choicey =document.getElementById("choicey").value;
 			var choicecat =document.getElementById("choicecat").value;
-			d3.csv('/newdata.csv', function(data) {
+			d3.csv('/test.csv', function(data) {
 					data.forEach(function(d){
 					var date= new Date(d.Stime * 1000);
                         d.Smonth=month[date.getUTCMonth()];
